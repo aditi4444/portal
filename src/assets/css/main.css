@@ -1,19 +1,22 @@
+
 span.firstWord {
     font-weight: bold;
     color: #43AFFF;
 
 } 
-.header {
+.appHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #303F60;
-    padding: 12px;
+    padding: 15px 20px;
 }
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.jobsImage {
+    margin-right: 150px;
+    position: absolute;
+    float: right;
+    right: 0;
+    top: 30vh;
 }
 .divider {
     background-color: #4D618E;
@@ -23,7 +26,7 @@ span.firstWord {
     margin: 0;
 }
 .loginSignUpBtn {
-    width: 148px;
+    width: fit-content;
     height: 35px;
     border: 1px solid #43afff;
     color: white;
@@ -36,12 +39,18 @@ span.firstWord {
 .blueBox {
     background-color: #303F60;
     color: white;
-    height: 50vh;
+    height: 30vh;
+    
+    padding: 0 0 5vh 30vh;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
 .detailsBox {
     height: 50vh;
     background-color: #EDF6FF;
-    padding: 200px 10px 20px 20px;
+    padding: 40vh;
 }
 .detailsCard {
     padding: 15px;
@@ -93,4 +102,55 @@ ul {
 .userRoleBox li.active {
     background-color: #43AFFF;
     color: white;
+}
+
+/* Dashboard */
+/* .container {
+    display: flex;
+    flex-direction: column;
+} */
+.header {
+    width:100%;
+    color:#fff;
+    text-align:start;
+    height:47px;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+}
+.logoutBtn {
+    background-color: white;
+    color: "black"
+
+}
+.jobsHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    padding: 10px 45px;
+    height: 20vh;
+    background-color: #303F60;
+}
+.jobsCardBox {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 45px;
+}
+.jobsCard {
+    width: min-content;
+    height: min-content;
+    margin: 10px;
+    
+    display: flex;
+    flex-direction: column;
+}
+.cardBoxHeader {
+    display: flex;
+    align-items: center;
+}
+.cardFooter {
+    display: flex;
+    align-items: center;
 }

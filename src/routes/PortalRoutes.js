@@ -10,7 +10,7 @@ const PortalRoutes = () => {
     return (
         <Router>
             <Routes>
-                <Route exact path="/" element={<JobsPortal/>} />
+                <Route exact path="/home" element={<JobsPortal/>} />
                 <Route exact path="/home/jobs" element={<Dashboard/>} />
             </Routes>
         </Router>

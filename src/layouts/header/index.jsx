@@ -1,19 +1,24 @@
 import React from 'react';
 
 // material UI
-import { Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import Login from '../../components/Dialogs/Login';
 
 // Components
 import ForgotPassword from '../../components/Dialogs/ForgotPassword';
 import SignupDialog from '../../components/Dialogs/SignupDialog';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
 
     // Dialog Box Open
     const [openLogin, setOpenLogin] = React.useState(false);
     const [openSignUp, setOpenSignUp] = React.useState(false);
     const [openForgotPass, setOpenForgotPass] = React.useState(false);
+
+    // Redirection
+    const navigate = useNavigate();
 
     const onButtonClick = () => {
         setOpenLogin(true)
@@ -38,12 +43,28 @@ const Header = () => {
         setOpenForgotPass(true)
         handleCloseLogin()
     }
+
+    
+    const onLogout = () => {
+        toast.success('You have been logged out successfully');
+        navigate('/home')
+    }
+
     return (
-        <div className="header">
+        <div className="appHeader">
             <Typography className='headerText'>My<span className='firstWord'>Jobs</span></Typography>
-            <button className='loginSignUpBtn' onClick={() => onButtonClick()} >
-                <Typography>Login/SignUp</Typography>
-            </button>
+            <div className='loginSignUpBtn'>
+            {props.field === 'dashboard'
+            ?
+            <Button style={{ color: "white"}} onClick={() => onLogout()} >
+                <Typography>Logout</Typography>
+            </Button>
+            :
+            <Button style={{ color: "white"}} onClick={() => onButtonClick()} >
+                <Typography>Login / Signup</Typography>
+            </Button>
+            }
+            </div>
 
             {/* Login Dialog */}
             {openLogin &&
