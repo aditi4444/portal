@@ -1,14 +1,14 @@
 import React from 'react';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 // material UI
 import { Button, Typography } from '@material-ui/core';
-import Login from '../../components/Dialogs/Login';
 
 // Components
+import Login from '../../components/Dialogs/Login';
 import ForgotPassword from '../../components/Dialogs/ForgotPassword';
 import SignupDialog from '../../components/Dialogs/SignupDialog';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 
 const Header = (props) => {
 

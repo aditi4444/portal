@@ -50,7 +50,7 @@ span.firstWord {
 .detailsBox {
     height: 50vh;
     background-color: #EDF6FF;
-    padding: 40vh;
+    padding: 12%;
 }
 .detailsCard {
     padding: 15px;
@@ -104,11 +104,6 @@ ul {
     color: white;
 }
 
-/* Dashboard */
-/* .container {
-    display: flex;
-    flex-direction: column;
-} */
 .header {
     width:100%;
     color:#fff;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GoLocation } from 'react-icons/go'
+
 // Material UI
 import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 
@@ -17,7 +18,6 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             const res = await getJobs()
-            console.log(res?.data?.code);
             if (res?.data?.code === 200) {
                 setJobs(res?.data?.data)
             }
@@ -31,7 +31,9 @@ const Dashboard = () => {
 
     return (
         <div className="container">
+
             <Header field="dashboard" />
+
             <div className='jobsHeader' >
                 <Button onClick={()=> {goToHome()}}><Typography style={{ color: "white" }}>Home</Typography></Button>
                 <Typography style={{fontSize: "22px", fontWeight: "normal", color: "white"}}>Jobs posted by you</Typography>
@@ -46,7 +48,7 @@ const Dashboard = () => {
                                 <GoLocation color='#43AFFF' style={{padding:"3px"}} />
                             {item.location}
                             <CardActions>
-                                <Button size='small' style={{ backgroundColor: "#43AFFF33", fontSize: "12px", textTransform: "none", width: "max-content" }}>View Applications</Button>
+                                <Button size='small' classNmae="viewAppBtn" style={{ backgroundColor: "#43AFFF33", textTransform: "none", width: "max-content" }}>View Applications</Button>
                             </CardActions>
                             </div>
                             </CardContent>

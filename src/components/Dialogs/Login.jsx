@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify';
 
 // Material UI
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, Typography } from '@material-ui/core';
 
 // API
 import { login } from '../../api/login.service';
-import { toast, ToastContainer } from 'react-toastify';
 
 const Login = ({ open, onClose, onSignUp, onForgotPassword }) => {
     // Data
@@ -46,7 +46,6 @@ const Login = ({ open, onClose, onSignUp, onForgotPassword }) => {
                 navigate('/home/jobs')
 
             } else {
-                console.log(res?.response);
                 setErrors(res?.response?.data?.errors)
             }
             if (res?.response?.data?.message) {
